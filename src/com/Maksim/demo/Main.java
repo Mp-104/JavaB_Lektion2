@@ -1,12 +1,13 @@
 package com.Maksim.demo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
 public class Main {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         TestLists testLists = new TestLists();
 
@@ -78,6 +79,57 @@ public class Main {
         System.out.println(noNeg(1,4));
         //noNeg();
 
+        int[] testList = {1,-1,-5,5,6};
+
+
+        System.out.println(testList);
+
+        for (int i = 0; i < testList.length; i++) {
+            System.out.println(testList);
+
+        }
+        Filter filter = new Filter();
+
+        List<Integer> list = new ArrayList<>(Arrays.asList(1,-3,5,19,0,-100)); // (Arrays.asList()) makes a preset ArrayList with provided elements
+        System.out.println("list: " + list);
+        System.out.println("filter.noNeg(list): " + filter.noNeg(list));
+        List<Integer> noNegativesList = new ArrayList<>();
+        System.out.println(noNegativesList);
+        list.add(-1);
+        list.add(-1);
+        list.add(-2);
+        list.add(-2);
+        list.add(-3);
+        list.add(3);
+        System.out.println(list.size());
+        System.out.println(list);
+        System.out.println(list.get(0));
+        for (int i = 0; i < list.size(); i++) {
+           if (list.get(i)>=0) {
+              noNegativesList.add(list.get(i));
+           }
+
+        }
+
+        list.removeIf( n -> (n < 0) );
+        System.out.println(list);
+        System.out.println(noNegativesList);
+
+
+
+        Integer[] intArray = {1,2,3,4,5};
+        printArray(intArray);
+
+
+
+        System.out.println(filter.addition(1,2));
+
+        List<Integer> testlist = new ArrayList<>(Arrays.asList(0,-1,-5,3,1-2,5));
+
+
+
+        System.out.println( filter.noNeg(testlist)  );
+        System.out.println(filter.noNeg1(testlist));
 
 
 
@@ -89,6 +141,15 @@ public class Main {
         return x+y;
 
     }
+
+    public static void printArray(Integer[] intArray) {
+       System.out.println("Array through printed method");
+       for (int i = 0; i < intArray.length; i++) {
+          System.out.println(i + " ");
+       }
+
+    }
+
 
     /*public static List noNeg1 (ArrayList<>){
 
